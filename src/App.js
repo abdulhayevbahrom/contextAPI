@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import About from "./About";
+import "./App.css";
+import Login from "./Login";
+import { useStateValue } from "./StateProvider";
 
 function App() {
+  const [{ studentName }] = useStateValue();
+  const [{userInfo}] = useStateValue()
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Login />
+      <About/>
+      <h1>{studentName}</h1>
+      <h1>APP JS</h1>
+      <h1>my name is {userInfo}</h1>
+
+      
     </div>
   );
 }
